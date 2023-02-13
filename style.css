@@ -32,16 +32,18 @@ body {
     display: none;
 }
 
- .trans{
+.trans {
     transition: 0.4s;
     cursor: pointer;
- }
- .trans:hover{
+}
+
+.trans:hover {
     box-shadow: 0px 0px 5px 5px cyan;
- }
- a{
+}
+
+a {
     text-decoration: none;
- }
+}
 
 .container {
     width: 1000px;
@@ -51,10 +53,11 @@ body {
     flex-wrap: wrap;
     box-shadow: 0px 0px 6px 0px cyan inset;
     border-radius: 3px;
-    overflow-x: hidden;
+    position: relative;
 }
 
 /* navigation */
+
 .nav-bar {
     width: 100%;
     height: 65px;
@@ -77,7 +80,7 @@ body {
 }
 
 @keyframes gol-gol {
-   
+
     100% {
         transform: rotate(360deg);
     }
@@ -109,7 +112,7 @@ body {
     align-items: center;
 }
 
-.mobile-search{
+.mobile-search {
     width: 240px;
     height: 30px;
     display: flex;
@@ -140,7 +143,7 @@ body {
 }
 
 @keyframes tan-tan {
-  
+
     50% {
         transform: rotate(-45deg);
     }
@@ -205,6 +208,7 @@ body {
     cursor: pointer;
     transition: 0.4s;
 }
+
 .latest-release-left {
     height: 55px;
     display: flex;
@@ -344,7 +348,7 @@ body {
 
 .latest-hindi {
     width: 100%;
-    margin:  10px 0px;
+    margin: 10px 0px;
     padding: 6px;
     display: flex;
     justify-content: space-between;
@@ -390,7 +394,6 @@ body {
     justify-content: space-between;
 }
 
-a.active,
 .queue div h3 a:hover {
     color: rgb(5, 180, 180);
     border-radius: 3px;
@@ -399,14 +402,6 @@ a.active,
 
 .mobile-queue-list {
     display: none;
-    cursor: pointer;
-    width: 55px;
-    padding-left: 2px;
-    height: 22px;
-    background-color: transparent;
-    color: cyan;
-    border: 2px solid cyan;
-    border-radius: 5px;
 }
 
 #queue-list {
@@ -463,43 +458,6 @@ a.active,
 
 /* =========================885======================= */
 @media (max-width: 885px) {
-   body{
-    position: fixed;
-   }
-    .mobile-queue-list {
-        display: block;
-        z-index: 100;
-        position: fixed;
-        left: calc(100vw - 60px);
-        top: 80px;
-    }
-
-    .queue {
-        display: none;
-        width: 200px;
-        height: calc(100% - 70px);
-        position: absolute;
-        right: 0;
-        top: 65px;
-        background-color: rgb(13, 174, 174);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        transform: translateX(100%);
-        transition: all 0.4s linear;
-
-        /* opacity: 0;
-        visibility: hidden;
-        pointer-events: none; */
-    }
-
-    .mobile-search {
-        display: none;
-    }
-    .search-bar{
-        width: 100px;
-    }
 
     .container {
         width: 100%;
@@ -508,4 +466,61 @@ a.active,
     .music {
         width: 100%;
     }
+
+    .mobile-queue-list {
+        display: block;
+        z-index: 100;
+        cursor: pointer;
+        position: fixed;
+        width: 55px;
+        padding-left: 2px;
+        height: 22px;
+        background-color: transparent;
+        color: cyan;
+        border: 2px solid cyan;
+        border-radius: 5px;
+        top: 80px;
+        left: calc(100vw - 60px);
+    }
+
+    .queue {
+        width: 200px;
+        height: calc(100% - 125px);
+        position: absolute;
+        right: 0;
+        top: 65px;
+        background-color: rgb(13, 174, 174);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: -1 ;
+        transition: all 0.4s linear;
+
+    }
+
+    .active .mobile-queue-list{
+        transform: translate(-134px , -36px );
+        transition: all 0.3s linear;
+    }
+
+    .active .queue{
+        z-index: 1;
+    }
+
+
+    .mobile-search {
+        display: none;
+    }
+
+    .search-bar {
+        width: 100px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        min-width: 250px;
+    }
+
 }
